@@ -18,8 +18,13 @@ public class Exceptions {
         System.out.println("program is working");
 
     }
-               private static void pause(){
-        Thread.sleep(millis:3000);
+
+    private static void pause() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
